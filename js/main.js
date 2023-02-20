@@ -1,18 +1,19 @@
-let btn = document.querySelector("#burger");
-let link = document.querySelectorAll("#link");
-btn.addEventListener("click", function () {
-  document.querySelector("header").classList.toggle("open");
-});
-document.addEventListener("keydown", function (e) {
-  if (e.key == "Escape") {
-    document.querySelector("header").classList.remove("open");
-  }
-});
-for (let item of link) {
-  item.addEventListener("click", function () {
-    document.querySelector("header").classList.remove("open");
-  });
-}
+// let btn = document.querySelector("#burger");
+// let link = document.querySelectorAll("#link");
+// btn.addEventListener("click", function () {
+//   document.querySelector("header").classList.toggle("open");
+//   document.body.classList.toggle("active");
+// });
+// document.addEventListener("keydown", function (e) {
+//   if (e.key == "Escape") {
+//     document.querySelector("header").classList.remove("open");
+//   }
+// });
+// for (let item of link) {
+//   item.addEventListener("click", function () {
+//     document.querySelector("header").classList.remove("open");
+//   });
+// }
 
 var swiper = new Swiper(".mySwiper", {
   spaceBetween: 30,
@@ -43,22 +44,10 @@ for (const submitBtn of submitBtns) {
     e.preventDefault();
     if (inputName.value === "") {
       inputName.style.borderColor = "red";
-      setTimeout(function () {
-        inputName.style.borderColor = "transparent";
-      }, 3000);
       errorName.style.display = "block";
-      setTimeout(function () {
-        errorName.style.display = "none";
-      }, 3000);
     } else if (errorNameNum.includes(inputName.value)) {
       inputName.style.borderColor = "red";
-      setTimeout(function () {
-        inputName.style.borderColor = "transparent";
-      }, 3000);
       errorNametext.style.display = "block";
-      setTimeout(function () {
-        errorNametext.style.display = "none";
-      }, 3000);
     } else {
       inputName.style.borderColor = "transparent";
     }
@@ -73,28 +62,10 @@ submitBtn.addEventListener("click", function (e) {
   e.preventDefault();
   if (inputTel.value === "") {
     inputTel.style.borderColor = "red";
-
-    setTimeout(function () {
-      inputTel.style.borderColor = "transparent";
-    }, 3000);
-
     errorTel.style.display = "block";
-
-    setTimeout(function () {
-      errorTel.style.display = "none";
-    }, 3000);
   } else if (inputTel.value == "s") {
     errorTelNum.style.display = "block";
-
-    setTimeout(function () {
-      errorTelNum.style.display = "none";
-    }, 3000);
-
     inputTel.style.borderColor = "red";
-
-    setTimeout(function () {
-      inputTel.style.borderColor = "transparent";
-    }, 3000);
   } else {
     inputTel.value = "";
     inputTel.style.borderColor = "transparent";
